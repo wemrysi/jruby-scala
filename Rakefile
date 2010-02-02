@@ -5,7 +5,7 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "jruby-scala"
-    gem.summary = %Q{TODO: one-line summary of your gem}
+    gem.summary = %Q{A Scala integration library for JRuby}
     gem.description = %Q{TODO: longer description of your gem}
     gem.email = "ingersoll@gmail.com"
     gem.homepage = "http://github.com/wemrysi/jruby-scala"
