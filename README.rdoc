@@ -1,6 +1,13 @@
 = jruby-scala
 
-Description goes here.
+Scala integration/interop library for JRuby.
+
+Much of the code for this library is originally from an article written by
+Daniel Spiewak:
+
+  http://www.codecommit.com/blog/ruby/integrating-scala-into-jruby
+
+many thanks to Daniel for his great article and implementation.
 
 == Note on Patches/Pull Requests
  
@@ -15,3 +22,8 @@ Description goes here.
 == Copyright
 
 Copyright (c) 2010 Emrys Ingersoll. See LICENSE for details.
+
+This work also contains code derived from public sources.
+
+Portions Copyright (c) 2010 Daniel Spiewak
+All rights reserved.
