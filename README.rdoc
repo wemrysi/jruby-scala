@@ -21,7 +21,7 @@ many thanks to Daniel for his great article and implementation.
 
 == Copyright
 
-Copyright (c) 2010 Emrys Ingersoll. See LICENSE for details.
+Copyright (c) 2010 System Insights, Inc. See LICENSE for details.
 
 This work also contains code derived from public sources.
 
