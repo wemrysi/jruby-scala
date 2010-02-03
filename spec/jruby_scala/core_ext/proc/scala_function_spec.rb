@@ -17,13 +17,13 @@ describe "JrubyScala::CoreExt::Proc::ScalaFunction" do
     end
   end
 
-  it "should define a FunctionN class for N = 0..SCALA_MAX_AIRITY" do
+  it "should define a FunctionN class for N = 0..SCALA_MAX_ARITY" do
     proc_ext = JrubyScala::CoreExt::Proc
     module Scala
       include_package('scala')
     end
 
-    (0..SCALA_MAX_AIRITY).each do |arity|
+    (0..SCALA_MAX_ARITY).each do |arity|
       klass = proc_ext.const_get("Function#{arity}")
       f = klass.new(lambda {})
       f.should be_a_kind_of(ScalaFunction)
