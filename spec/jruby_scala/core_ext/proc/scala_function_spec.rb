@@ -35,9 +35,9 @@ describe "JrubyScala::CoreExt::Proc::ScalaFunction" do
     it "should be usable as a Scala Function" do
       sum = Function2.new(lambda {|i, tuple| i + tuple._2})
       hm = scala.collection.immutable.HashMap.new
-      hm.update('a', 1)
-      hm.update('b', 2)
-      hm.update('c', 3)
+      hm = hm.update('a', 1)
+      hm = hm.update('b', 2)
+      hm = hm.update('c', 3)
       hm.fold_left(0, sum).should == 6
     end
   end
