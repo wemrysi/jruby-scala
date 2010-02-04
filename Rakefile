@@ -6,7 +6,7 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "jruby-scala"
     gem.summary = %Q{A Scala integration library for JRuby}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.description = %Q{A Scala integration library for JRuby that allows using Procs as Scala functions, including Scala traits into Ruby modules, and more.}
     gem.email = "ingersoll@gmail.com"
     gem.homepage = "http://github.com/wemrysi/jruby-scala"
     gem.authors = ["Emrys Ingersoll"]
