@@ -1,4 +1,5 @@
 require 'set'
+require 'jruby_scala/core_ext/operator_translations'
 
 module JrubyScala
   module CoreExt
@@ -13,19 +14,22 @@ module JrubyScala
       module Traits
         def self.included(base)
           base.module_eval do
-            alias_method :include_without_trait_support, :include
-            alias_method :include, :include_with_trait_support
+            alias_method :include_without_scala_trait_support, :include
+            alias_method :include, :include_with_scala_trait_support
           end
         end
 
         # Mixes the given modules into the current module, including Scala
         # Traits.
-        def include_with_trait_support(*modules)
+        def include_with_scala_trait_support(*modules)
           modules.each do |m|
             if m.respond_to?(:java_class) and m.java_class.interface?
               loader = m.java_class.class_loader
               unless loader.nil?
                 mixin_methods_from_trait(loader.load_class(m.java_class.to_s), loader)
+                unless self < JrubyScala::CoreExt::OperatorTranslations
+                  include_without_scala_trait_support(JrubyScala::CoreExt::OperatorTranslations)
+                end
               end
             end
 
@@ -33,7 +37,7 @@ module JrubyScala
               define_method(:scala_reflective_trait_methods) {@@trait_methods}
             end
 
-            include_without_trait_support(m)
+            include_without_scala_trait_support(m)
           end
         end
 
