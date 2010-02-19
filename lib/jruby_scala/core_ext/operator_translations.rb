@@ -50,8 +50,6 @@ module JrubyScala
         elsif sym == :to_proc and type_of_scala_function?(self)
           self
         else
-          method_missing_without_scala_operator_translations(sym, *args)
-=begin
           str = sym.to_s
           str = $&[1] + '_=' if str =~ /^(.*[^\]=])=$/
           OPERATORS.each {|from, to| str.gsub!(from, to)}
@@ -61,7 +59,6 @@ module JrubyScala
           else
             method_missing_without_scala_operator_translations(sym, *args)
           end
-=end
         end
       end
 

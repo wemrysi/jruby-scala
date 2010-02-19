@@ -11,6 +11,13 @@ describe "JrubyScala::CoreExt::OperatorTranslations" do
     @h[0]
   end
 
+  it "should translate operators into a corresponding method call" do
+    @h = @h.update(1, 67)
+    @h[1].should == 67
+    @h = @h - 1
+    lambda {@h[1]}.should raise_error(java.util.NoSuchElementException)
+  end
+
   describe "when an object extends a Scala FunctionN" do
     it "should translate #call to #apply" do
       @h.should_receive(:apply).with(0)
