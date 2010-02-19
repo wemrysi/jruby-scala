@@ -22,3 +22,4 @@ pkg
 *.gemspec
 doc
 .yardoc
+scala-library*.jar

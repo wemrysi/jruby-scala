@@ -9,6 +9,18 @@ Daniel Spiewak:
 
 many thanks to Daniel for his great article and implementation.
 
+== Usage
+
+You'll need to make sure JRuby loads the scala-library jar before this gem is loaded.  You can do this two ways:
+
+1. Specifying the Jar via classpath when executing JRuby
+    jruby -J-cp path/to/scala-library-VERSION.jar some-ruby-script-which-uses-jruby-scala.rb
+
+2. Requiring the Scala jar before the gem in your .rb file
+    require 'path/to/scala-library-VERSION.jar'
+    require 'rubygems'
+    require 'jruby_scala'
+
 == Note on Patches/Pull Requests
  
 * Fork the project.
